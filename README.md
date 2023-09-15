@@ -18,11 +18,13 @@ eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-# install nginx, postgres and rabbitmq
+# Install nginx, postgres and rabbitmq
+```
 sudo apt-get install nginx                    
 sudo apt-get install postgresql postgresql-contrib
 sudo apt-get install rabbitmq-server              
 sudo apt-get install libpq-dev   
+```
 
 # Nginx
 - create a config similar to the one in nginx_configs and mv it to `/etc/nginx/sites-available/` 
