@@ -50,9 +50,9 @@ exit
 # create a user in rabbitmq for celery app and virtual host
 ```
 rabbitmqctl add_user <user> <password>
-rabbitmqctl set_user_tags <user> <password>
+rabbitmqctl set_user_tags <user> <tag>
 rabbitmqctl add_vhost <name_for_virtual_host>
-rabbitmqctl set_permissions -p <name_for_virtual_host> <user> ".*" ".*" ".*"
+rabbitmqctl set_permissions -p <name_for_virtual_host> <tag> ".*" ".*" ".*"
 ```
 
 
