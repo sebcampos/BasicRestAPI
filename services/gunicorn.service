@@ -1,0 +1,21 @@
+# file_path sudo vim /etc/systemd/system/gunicorn.service
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+
+
+[Service]
+User=sebash
+Group=www-data
+WorkingDirectory= <PATH_TO_DJANGO_PROJECT>
+ExecStart= <PATH_TO_PYENV_VIRTUALENV> /bin/gunicorn \
+        --access-logfile - \
+        -k uvicorn.workers.UvicornWorker \
+        --workers 3 \
+        --bind unix:/run/gunicorn.sock \
+        <PROJECT_NAME>.asgi:application
+
+[Install]
+WantedBy=multi-user.target

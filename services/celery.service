@@ -1,0 +1,11 @@
+[Unit]
+Description=<DESCRIPTION>
+After=multi-user.target
+[Service]
+User=<USER>
+Type=simple
+Restart=always
+WorkingDirectory=<PATH_TO_PROJECT>
+ExecStart=<PATH_TO_PYENV_VIRTUAL_ENV>/bin/python -m celery -A CeleryApp worker -l info -E
+[Install]
+WantedBy=multi-user.target
