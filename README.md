@@ -88,7 +88,7 @@ python manage.py startapp <APPLICATION_NAME>
 
 - collectstatic and move it to /etc/nginx/
 ```
-python manage.py collectstatic
+sudo python manage.py collectstatic
 ```
 
 - update setting.py in PROJECT_NAME directory with database credentials
